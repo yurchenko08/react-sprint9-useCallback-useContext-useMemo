@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Tests",
+      "setup": "git clone https://github.com/ita-react-marathon-sprint-usecontext/context-callback-test src/__tests__ && npm install",
+      "run": "CI=true npm test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 10
+    }
+  ]
+}
