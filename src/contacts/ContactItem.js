@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { IconButton } from "@mui/material";
 import stylescenter from "./ContactItem.module.css";
 
@@ -10,22 +10,16 @@ const options = [
   { value: "sms", label: "SMS" },
 ];
 
-const ContactItem = ({index}) => {
-
-  // NOTE: This component should take additional props 
+const ContactItem = ({ index, id, removeContact }) => {
+  // NOTE: This component should take additional props
   // NOTE: and use them to manage state
 
-  console.log("child render", index)
+  console.log("child render", index);
   return (
     <div className={stylescenter.fullChannelControll}>
-      <div className={stylescenter.channelAndChannel} >
-        <p className={stylescenter.channelOfConntection}>
-          Канал зв'язку
-        </p>
-        <select
-          className={stylescenter.selecterOptions}
-          name="optionSelected"          
-        >
+      <div className={stylescenter.channelAndChannel}>
+        <p className={stylescenter.channelOfConntection}>Канал зв'язку</p>
+        <select className={stylescenter.selecterOptions} name='optionSelected'>
           {options.map((el) => (
             <option key={el.value} value={el.value}>
               {el.label}
@@ -34,21 +28,22 @@ const ContactItem = ({index}) => {
         </select>
       </div>
       <div className={stylescenter.detailsAndInputAndDelete}>
-        <p className={stylescenter.channelOfConntection}>
-          Деталі
-        </p>
+        <p className={stylescenter.channelOfConntection}>Деталі</p>
         <textarea
-          data-testid="details"
-          maxLength="100"
-          rows="2"          
-          className={stylescenter.detailsChannelInput}          
-          placeholder="введіть телефон або @username"
+          data-testid='details'
+          maxLength='100'
+          rows='2'
+          className={stylescenter.detailsChannelInput}
+          placeholder='введіть телефон або @username'
         />
-        <div className={stylescenter.removeButtons}>
+        <div
+          className={stylescenter.removeButtons}
+          onClick={() => removeContact(id)}
+        >
           {index !== 0 && (
             <span>
               <IconButton>
-                <img src="bin.svg" alt="bin logo" />
+                <img src='bin.svg' alt='bin logo' />
                 <span className={stylescenter.removeButtonText}>
                   Видалити канал
                 </span>
@@ -58,7 +53,7 @@ const ContactItem = ({index}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContactItem
+export default ContactItem;
