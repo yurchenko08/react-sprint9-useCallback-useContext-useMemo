@@ -1,0 +1,27 @@
+.channels{    
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;    
+}
+
+.addButton{
+    border: 2px solid #D7D7DC;
+    border-radius: 35px;
+    text-transform: none;
+    background-color: #fff;
+}
+
+.addButtonText{
+    font-family: 'Mulish', sans-serif;
+    color: black;
+    
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    letter-spacing: 0.2px;
+    margin-left: 5px;
+}
