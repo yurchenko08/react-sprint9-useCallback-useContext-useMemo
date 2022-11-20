@@ -23,8 +23,9 @@ const ContactItem = ({ index, id, removeContact }) => {
         <select
           className={stylescenter.selecterOptions}
           name='optionSelected'
-          value={store.selects}
-          onChange={(e) => store.setSelects(e.target.value)}
+          onChange={(e) =>
+            store.value === index + 1 && store.setSelects(e.target.value)
+          }
         >
           {options.map((el) => (
             <option key={el.value} value={el.value}>

@@ -5,7 +5,7 @@ function ChannelStatistics() {
   const value = useContext(ContactContext);
   return (
     <p data-testid='statistics'>
-      count of channels: {value.value} <br />
+      Count of channels: {value.value} <br />
       {value.selects !== "default" &&
         value.selects !== "none" &&
         `your last channel is ${value.selects}`}

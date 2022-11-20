@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import stylesCenter from "./index.module.css";
 import ContactItem from "./ContactItem";
 import { useEffect } from "react";
@@ -15,7 +15,7 @@ const Contacts = ({ counter }) => {
   const removeContact = (id) => {
     setContacts((prev) => prev.filter((el) => el.props.id !== id));
   };
-  useEffect(() => counter(contacts), [contacts, counter]);
+  useEffect(() => counter(contacts), [contacts]);
   return (
     <>
       <div className={stylesCenter.channels}>
