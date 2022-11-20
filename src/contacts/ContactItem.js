@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IconButton } from "@mui/material";
 import stylescenter from "./ContactItem.module.css";
+import { ContactContext } from "../App";
 
 const options = [
   { value: "none", label: "" },
@@ -13,13 +14,18 @@ const options = [
 const ContactItem = ({ index, id, removeContact }) => {
   // NOTE: This component should take additional props
   // NOTE: and use them to manage state
-
+  const store = useContext(ContactContext);
   console.log("child render", index);
   return (
     <div className={stylescenter.fullChannelControll}>
       <div className={stylescenter.channelAndChannel}>
         <p className={stylescenter.channelOfConntection}>Канал зв'язку</p>
-        <select className={stylescenter.selecterOptions} name='optionSelected'>
+        <select
+          className={stylescenter.selecterOptions}
+          name='optionSelected'
+          value={store.selects}
+          onChange={(e) => store.setSelects(e.target.value)}
+        >
           {options.map((el) => (
             <option key={el.value} value={el.value}>
               {el.label}

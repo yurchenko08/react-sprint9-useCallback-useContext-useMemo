@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import stylesCenter from "./index.module.css";
 import ContactItem from "./ContactItem";
+import { useEffect } from "react";
 
-const Contacts = () => {
+const Contacts = ({ counter }) => {
   const [id, setId] = useState(1);
   const [contacts, setContacts] = useState([
     <ContactItem id={0} index={0} key={0} />,
@@ -13,12 +14,8 @@ const Contacts = () => {
   };
   const removeContact = (id) => {
     setContacts((prev) => prev.filter((el) => el.props.id !== id));
-    console.log("deleted item...");
-    console.log(contacts);
   };
-  // NOTE: 'teach' the button to add new contact info
-  // NOTE: and render an array of ContactItem components
-
+  useEffect(() => counter(contacts), [contacts, counter]);
   return (
     <>
       <div className={stylesCenter.channels}>
