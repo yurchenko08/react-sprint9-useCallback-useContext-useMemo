@@ -6,7 +6,9 @@ function ChannelStatistics() {
   return (
     <p data-testid='statistics'>
       count of channels: {value.value} <br />
-      {value.selects !== "default" && `your last channel is ${value.selects}`}
+      {value.selects !== "default" &&
+        value.selects !== "none" &&
+        `your last channel is ${value.selects}`}
     </p>
   );
 }
